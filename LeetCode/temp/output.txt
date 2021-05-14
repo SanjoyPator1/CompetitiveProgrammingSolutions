@@ -1,1 +1,3 @@
-The output is 18
+The output is 14
+The final ans is 
+ 4 9 9 49 121
