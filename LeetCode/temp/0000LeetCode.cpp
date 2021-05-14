@@ -1,37 +1,52 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-
-vector<int> sortedSquares(vector<int>& nums) {
-
-	int len = nums.size();
-
-	if (len == 0)
-		return nums;
-
-	vector<int> result(len);
-	int low = 0, high = len - 1, j = len - 1;
-	while (low <= high)
-	{
-		if (abs(nums[low]) > abs(nums[high]))
-		{
-			result[j--] = nums[low] * nums[low];
-			low++;
-		}
-		else
-		{
-			result[j--] = nums[high] * nums[high];
-			high--;
-		}
-
-	}
-
-	return result;
-
-
-
+void rev(vector<int>&a,int m)
+{
+    for(int i=0;i<m/2;i++)
+        swap(a[i],a[m-i-1]);
 }
+void merge(vector<int>& a, int m, vector<int>& b, int n) 
+{
+    
+    int i,j=0,pos=0;
+    rev(a,m);
+    reverse(a.begin(),a.end());
+    i=n;
+    while(i<m+n&&j<n)
+    {
+        if(a[i]>b[j])
+        {
+            a[pos]=b[j];
+            j++;
+        }
+        else
+        {
+            a[pos]=a[i];
+            i++;
+        }
+        pos++;
+    }
+    while(i<m+n)
+    {
+        a[pos]=a[i];
+        pos++;
+        i++;
+    }
+    while(j<n)
+    {
+        a[pos]=b[j];
+        j++;
+        pos++;
+    }
+    cout<<"pos is "<<pos<<endl;
+
+    int k =0;
+     while(k<pos) {
+		cout << "The ans is " << a[k] << endl;
+	}
+}
+
 
 int main()
 {
@@ -41,21 +56,20 @@ int main()
 #endif
 
 	int in, out;
-	cin >> in;
+	// cin >> in;
 
-	out = in * 2;
+	// out = in * 2;
 
-	cout << "The output is " << out << endl;
+	// cout << "The output is " << out << endl;
 
-	vector<int> vec = { -7, -3, 2, 3, 11};
+	vector<int> a = {1,2,3,0,0,0};
+	vector<int> b = {2,5,6};
 
-	vector<int> res = sortedSquares(vec);
+	merge(a,a.size()/2,b,b.size());
 
-	cout << "The final ans is " << endl;
-	for (int i = 0; i < res.size() ; i++) {
-		cout << " " << res[i] ;
-
-	}
+	// for (int i = 0; i < a.size(); i++) {
+	// 	cout << "The ans is " << a[i] << endl;
+	// }
 
 
 
