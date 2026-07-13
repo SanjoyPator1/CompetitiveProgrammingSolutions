@@ -1,5 +1,5 @@
-# Ignore all versions of self-solutions
-v1/
+# Ignore all versions of self-solutions except v1
+# v1/
 v2/
 v3/
 v4/
@@ -8,6 +8,6 @@ v6/
 v7/
 v8/
 v9/
-*
+# *
 !.gitignore
 !README.md
