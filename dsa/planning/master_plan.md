@@ -357,7 +357,7 @@ dsa-2025/
 
 ## 8. AI Workflow — Who Does What
 
-### Opus (The Strategist — Krishna)
+### Opus (The Strategist)
 - Teaches patterns and concepts from scratch before each topic
 - Writes `topic_XX_scaffold_blueprint.md` files
 - Reviews your code like an interviewer
@@ -371,7 +371,7 @@ dsa-2025/
 - Handles repetitive file creation tasks
 - Runs commands (git, file operations)
 
-### You (The Warrior — Arjun)
+### You (The Warrior)
 - Reads the notes and learns the patterns
 - Writes ALL the actual solution code
 - Runs and debugs your own code

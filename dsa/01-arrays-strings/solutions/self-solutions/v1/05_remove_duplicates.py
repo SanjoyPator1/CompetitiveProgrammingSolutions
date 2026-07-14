@@ -46,7 +46,21 @@ def remove_duplicates(nums: List[int]) -> int:
     
     YOUR CODE HERE 👇
     """
-    pass
+    if not nums: return 0
+    
+    write = 1   # start writing at index 1
+
+    # read will increment no matter what - read starts from 1
+    for read in range(1, len(nums)):
+
+        # if read is different than write-1 then assign read val to write and increment write idx
+        if nums[read] != nums[write-1]:
+            # assign value of read to write
+            nums[write] = nums[read]
+            # increment write index
+            write += 1
+    
+    return write
 
 
 # ─── Test Cases ──────────────────────────────────────────────
